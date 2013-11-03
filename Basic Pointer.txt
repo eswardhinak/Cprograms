@@ -1,0 +1,12 @@
+#include "stdafx.h"
+#include <stdio.h>
+void task (int *xPtr, int *yPtr);
+int main(){
+	int x = 4, y = 5;
+	task(&x,&y);
+	printf("%d %d", x, y);
+}
+void task(int *xPtr, int *yPtr){
+	*xPtr = *xPtr + 1;
+	*yPtr = *yPtr + 400;
+}
