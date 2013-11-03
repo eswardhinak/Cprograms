@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include "stdafx.h"
+#include <stdlib.h>
+int main() {
+	int sum = 0;
+	int sum1 = 0;
+	int square;
+	for (int i = 1; i<=100; i++){
+		sum = sum + (i*i);
+	}
+	for (int j = 0; j <= 100; j++){
+		sum1 = sum1 + j;
+		square = sum1 * sum1;
+	}
+	if (square > sum){
+
+	printf("%d", square - sum);
+	}
+	else {
+		printf("%d", sum - square);
+	}
+	return 0;
+}
+		

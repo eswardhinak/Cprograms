@@ -1,0 +1,58 @@
+#include "stdafx.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define SIZE 100
+
+void bubble(int c[], int size, int (*compare)(int a, int b));
+int ascending(int a, int b);
+int descending(int a, int b);
+
+
+int main(){
+	int eswar[SIZE];
+	srand(time(NULL));
+
+	
+
+	for (int i = 0; i<SIZE; i++){
+		
+		eswar[i] = rand()%100000;
+
+
+	}
+	for (int j = 0; j<SIZE; j++){
+		printf("%d\t", eswar[j]);
+	}
+	printf("\n1. Ascending order\n2. Descending Order\n");
+	int order;
+	scanf("%d", &order);
+	if (order == 1){
+		bubble(eswar, SIZE, ascending);
+	}
+	else{
+		bubble(eswar,SIZE, descending);
+	}
+	for (int j = 0; j<SIZE; j++){
+		printf("%d\t", eswar[j]);}}
+int ascending(int a, int b){
+	return a>b;
+}
+int descending(int a, int b){
+	return b>a;
+}
+void bubble(int c[], int size, int (*compare)(int a, int b)){
+	void swap(int *elementPtr1, int *elementPtr2);
+	int pass;
+	int k;
+	for (pass = 0; pass<SIZE-1; pass++){
+		for (k = 0; k<SIZE-1; k++){
+			
+	if ((*compare )(c[k], c[k+1])){
+		swap(&c[k], &c[k+1]);}}}}
+
+void swap(int *elementPtr1, int *elementPtr2){
+	int hold = *elementPtr1;
+	*elementPtr1 = *elementPtr2;
+	*elementPtr2 = hold;
+}

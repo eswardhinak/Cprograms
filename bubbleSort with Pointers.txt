@@ -1,0 +1,38 @@
+#include "stdafx.h"
+#include <stdio.h>
+#include <ctype.h>
+#define SIZE 10
+void bubbleSort(int *const array, const int size);
+int main (){
+	int a[SIZE];
+	printf("Enter ten numbers. \n");
+
+	for (int i = 0; i<SIZE; i++){
+		printf("Enter %dth number: ", i+1);
+		scanf("%d", &a[i]);
+
+
+	}
+	for (int j = 0; j<SIZE; j++){
+		printf("%d ", a[j]);
+	}
+	bubbleSort(a, SIZE);
+	printf("Data in numerical order:\n");
+	for (int i = 0; i<SIZE; i++){
+		printf("%d ", a[i]);
+	}}
+void bubbleSort (int *const array, const int size){
+	void swap(int *element1Ptr, int *element2Ptr);
+	int pass;
+	int j;
+	for (pass = 0; pass<SIZE-1; pass++){
+		for (j = 0; j <SIZE-1; j++){
+			if (array[j]>array[j+1]){
+			swap(&array[j], &array[j+1]);
+			}}}
+}
+void swap(int *element1Ptr, int *element2Ptr){
+	int hold = *element1Ptr;
+	*element1Ptr = *element2Ptr;
+	*element2Ptr = hold;
+}

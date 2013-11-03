@@ -1,0 +1,35 @@
+#include "stdafx.h"
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	int account;
+	char name[50];
+	double balance;
+
+	FILE *file = fopen("C:\\Users\\Eswar\\Desktop\\clients.txt", "a+");
+	
+
+		printf("Enter account number, name, balance\n");
+				printf(" ? ");
+
+		scanf("%d%s%lf", &account, name, &balance);
+	
+	while (!feof(stdin)){
+		fprintf(file, "%d %s %.2f\n", account, name, balance);
+		printf(" ? ");
+		scanf("%d%s%lf", &account, name, &balance);
+	}
+	fclose(file);
+	fopen("C:\\Users\\Eswar\\Desktop\\clients.txt", "a+");
+	rewind(file);
+
+		printf("%-10s%-13s%s\n", "Account", "Name", "Balance");
+		fscanf(file, "%d%s%lf", &account, name, &balance);
+		while (!feof(file)){
+			printf("%-10d%-13s%7.2f\n", account, name, balance);
+			fscanf(file, "%d%s%lf", &account, name, &balance);}
+		fclose(file);
+
+	return 0;
+}

@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include "stdafx.h"
+#include <stdlib.h>
+int palindrome (int b);
+
+int main(){
+	int great=  0;
+	int number;
+	int n ;
+	int p ;
+	for (n = 100; n<=999; n++){
+		for (p = 100; p <= 999; p++){
+			number = p*n;
+			if (number > great && palindrome(number) == 1 ){
+			great = number;
+			}
+			}}
+printf("\n%d", great);
+
+}
+			
+int palindrome (int b){
+
+
+int b1 = b/100000;
+int b2 = (b/10000)%10;
+int b3 = (b/1000)%10;
+
+int b4 = (b/100)%10;
+int b5 = (b/10)%10;
+
+int b6 = b%10;
+
+if ((b1 == b6) && (b2 == b5) && (b3 == b4)){
+return 1;
+}
+else {return 0;}
+
+
+
+}

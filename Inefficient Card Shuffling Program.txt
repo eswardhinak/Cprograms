@@ -1,0 +1,39 @@
+#include "stdafx.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void shuffle(int d[][13]);
+void deal(int d[][13], const char*s[], const char*f[]);
+
+int main(void){
+	const char*suit[4] = {"Hearts", 
+		"Diamonds", "Clubs", "Spades"};
+	const char*face[13] = {"Ace", "Two", "Three",
+		"Four", "Five", "Six", "Seven", "Eight", "Nine",
+		"Ten", "Jack", "Queen", "King"};
+	int deck[4][13]  = {0};
+	shuffle(deck);
+	deal(deck, suit, face);
+}
+void shuffle(int d[][13]){
+	int row;
+	int column;
+	int counter;
+	for (int counter = 1; counter<=52; counter ++){
+		do{
+			row= rand()%4;
+			column = rand()%13;
+			}
+		while(d[row][column] != 0);
+		d[row][column] = counter;}}
+void deal(int d[][13], const char *s[], const char*f[]){
+	int row;
+	int column;
+	int counter;
+	for (counter = 1; counter <= 52; counter++){
+		for (row = 0; row<=3; row++){
+			for (column = 0; column <=12 ; column++){
+				if (d[row][column] == counter){
+					printf("%s of %s\n", f[column], s[row]);
+				}}}}}

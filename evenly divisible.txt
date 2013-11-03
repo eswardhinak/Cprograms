@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include "stdafx.h"
+#include <stdlib.h>
+int main() {
+int number;
+
+for (int i = 20; i>0; i+=20){
+	int counter = 0;
+	for (int j = 1; j <= 20; j++){
+		if (i%j == 0){
+			counter ++;
+		}}
+		if (counter == 20){
+			
+		number = i;
+		break;
+		}}
+
+printf("%d\n", number);
+
+}

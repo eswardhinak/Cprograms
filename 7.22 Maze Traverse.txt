@@ -1,0 +1,54 @@
+#include "stdafx.h"
+
+#include <stdio.h>
+
+void mazeTraverse(char maze[12][12], int x, int y);
+void printmaze(char maze[12][12]);
+int main(){}
+
+void mazeTraverse (char maze[12][12], int x, int y ){
+	while ((x>=0 && x<=11) && (y>=0 && y<=11)){
+		if (maze[x+1][y] == '.'){
+			maze[x][y] = 'X';
+			printmaze(maze);
+			mazeTraverse(maze, x+1, y);}
+		else if (maze[x][y+1] == '.'){
+			maze[x][y] = 'X';
+			printmaze(maze);
+			mazeTraverse(maze, x, y+1);}
+		else if (maze[x][y-1] == '.'){
+			maze[x][y] = 'X';
+			printmaze(maze);
+			mazeTraverse(maze, x, y-1);}
+		else if (maze[x-1][y] == '.'){
+			maze[x][y] = 'X';
+			printmaze(maze);
+			mazeTraverse(maze, x-1, y);}
+		else if (maze[x+1][y] == 'X'){
+			maze[x][y] = 'X';
+			printmaze(maze);
+			mazeTraverse(maze, x+1, y);}
+		else if (maze[x][y+1] == 'X'){
+			maze[x][y] = 'X';
+			printmaze(maze);
+			mazeTraverse(maze, x, y+1);}	
+		else if (maze[x][y-1] == 'X'){
+			maze[x][y] = 'X';
+			printmaze(maze);
+			mazeTraverse(maze, x, y-1);}
+		else if (maze[x-1][y] == 'X'){
+			maze[x][y] = 'X';
+			printmaze(maze);
+			mazeTraverse(maze, x-1, y);}
+	}
+	printf("Maze Complete!");
+}
+void printmaze(char maze[12][12]){
+	for (int b=0; b<12;b++){
+		for (int a=0; a<12; a++){
+			printf("%c ", maze[a][b]);
+		}
+		printf("\n");
+	}
+}
+		
